@@ -21,13 +21,13 @@ id_turno int,
 foreign key (id_turno) references turnos(id_turno)
 );
 
--- Tabla Clientes
+-- Creacion de la tabla Clientes
 create table clientes (
 id_cliente int primary key,
 nombre varchar(50)
 );
 
--- Tabla Reservas
+-- Creacion de la tabla Reservas, aquí se relaciona con Clientes y Meseros (id_cliente,id_mesero)
 create table reservas (
 id_reserva int primary key,
 fecha datetime,
@@ -38,69 +38,80 @@ foreign key (id_mesero) references meseros(id_mesero)
 );
 
 
--- ====================================
--- INSERTS DE DATOS
--- ====================================
+-- ==================================================
+-- A PARTIR DE AQUÍ VIENE LA PPT "INSERTAR REGISTROS"
+-- ==================================================
 
-select * from turnos;
+-- Turnos (3)
+INSERT INTO turnos (id_turno, nombre_turno) VALUES (1, 'Mañana');
+INSERT INTO turnos (id_turno, nombre_turno) VALUES (2, 'Tarde');
+INSERT INTO turnos (id_turno, nombre_turno) VALUES (3, 'Noche');
 
--- Turnos (solo 3)
-INSERT INTO turnos (id_turno, nombre_turno) VALUES
-(1, 'Mañana'),
-(2, 'Tarde'),
-(3, 'Noche');
+-- Meseros (6)
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (1, 'Carlos', 'López', 'García', 1);
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (2, 'María', 'Rodríguez', 'Pérez', 1);
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (3, 'José', 'Martínez', 'Sánchez', 2);
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (4, 'Ana', 'Hernández', 'Díaz', 2);
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (5, 'Luis', 'González', 'Ruiz', 3);
+INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES (6, 'Laura', 'Fernández', 'Moreno',3);
 
--- INSERT INTO turnos (id_turno, nombre_turno) VALUES (1, 'Mañana');
--- INSERT INTO turnos (id_turno, nombre_turno) VALUES (1, 'Mañana');
--- INSERT INTO turnos (id_turno, nombre_turno) VALUES (1, 'Mañana');
-
--- Meseros (6 ejemplos)
-INSERT INTO meseros (id_mesero, nombre, ape_paterno, ape_materno, id_turno) VALUES
-(1, 'Carlos', 'López', 'García', 1),
-(2, 'María', 'Rodríguez', 'Pérez', 1),
-(3, 'José', 'Martínez', 'Sánchez', 2),
-(4, 'Ana', 'Hernández', 'Díaz', 2),
-(5, 'Luis', 'González', 'Ruiz', 3),
-(6, 'Laura', 'Fernández', 'Moreno', 3);
-
--- Clientes (10 registros como pediste)
-INSERT INTO clientes (id_cliente, nombre) VALUES
-(1, 'Juan Pérez Morales'),
-(2, 'Sofía Ramírez Torres'),
-(3, 'Miguel Ángel Castro'),
-(4, 'Valeria Mendoza Ortiz'),
-(5, 'Roberto Salazar Vega'),
-(6, 'Camila Fuentes Rivera'),
-(7, 'Andrés Castillo Herrera'),
-(8, 'Gabriela Navarro Luna'),
-(9, 'Diego Armando Rivas'),
-(10, 'Lucía Domínguez Flores');
+-- Clientes (10)
+INSERT INTO clientes (id_cliente, nombre) VALUES (1, 'Juan Pérez Morales');
+INSERT INTO clientes (id_cliente, nombre) VALUES (2, 'Sofía Ramírez Torres');
+INSERT INTO clientes (id_cliente, nombre) VALUES (3, 'Miguel Ángel Castro');
+INSERT INTO clientes (id_cliente, nombre) VALUES (4, 'Valeria Mendoza Ortiz');
+INSERT INTO clientes (id_cliente, nombre) VALUES (5, 'Roberto Salazar Vega');
+INSERT INTO clientes (id_cliente, nombre) VALUES (6, 'Camila Fuentes Rivera');
+INSERT INTO clientes (id_cliente, nombre) VALUES (7, 'Andrés Castillo Herrera');
+INSERT INTO clientes (id_cliente, nombre) VALUES (8, 'Gabriela Navarro Luna');
+INSERT INTO clientes (id_cliente, nombre) VALUES (9, 'Diego Armando Rivas');
+INSERT INTO clientes (id_cliente, nombre) VALUES (10, 'Lucía Domínguez Flores');
 
 -- Reservas (8 ejemplos)
-INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES
-(1, '2025-11-28 13:30:00', 1, 1),
-(2, '2025-11-28 14:00:00', 3, 2),
-(3, '2025-11-28 20:15:00', 5, 5),
-(4, '2025-11-29 13:00:00', 2, 1),
-(5, '2025-11-29 21:00:00', 7, 6),
-(6, '2025-11-30 12:45:00', 4, 3),
-(7, '2025-11-30 19:30:00', 8, 4),
-(8, '2025-12-01 20:00:00', 10, 5);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (1, '2025-11-28 13:30:00', 1, 1);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (2, '2025-11-28 14:00:00', 3, 2);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (3, '2025-11-28 20:15:00', 5, 5);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (4, '2025-11-29 13:00:00', 2, 1);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (5, '2025-11-29 21:00:00', 7, 6);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (6, '2025-11-30 12:45:00', 4, 3);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (7, '2025-11-30 19:30:00', 8, 4);
+INSERT INTO reservas (id_reserva, fecha, id_cliente, id_mesero) VALUES (8, '2025-12-01 20:00:00', 10, 5);
 
--- Seleccionada todos los campos de la tabla
+-- ==================================================
+-- A PARTIR DE AQUÍ VIENE "CONSULTAS SQL"
+-- ==================================================
+
+-- ==================================================
+-- CLAUSULA SELECT"
+-- ==================================================
+
+-- Seleccionada todos los campos de la tabla clientes
 SELECT * from clientes;
 
--- Selecciona un campo en especifico
+-- Selecciona el campo nombre de la tabla clientes
 SELECT nombre from clientes;
+
+-- Selecciona el campo nombre, ape_materno, ape_paterno de la tabla meseros
 SELECT id_mesero, nombre, ape_materno, ape_paterno from meseros;
 
--- Buscadores Exacto
-SELECT * from clientes where nombre = 'Juan Pérez Morales';
+-- ==================================================
+-- CLAUSULA SELECT CON WHERE"
+-- ==================================================
 
--- Buscadores por caracteres
-SELECT * from clientes where nombre like '%as%'
+-- Mostrar los meseros cuando el nombre sea "Carlos"
+SELECT * from meseros  where nombre = 'Carlos';
 
--- Ordenar de mayor a menor
-SELECT * from clientes order by id_cliente desc
+-- ==================================================
+-- CLAUSULA SELECT CON ORDER BY"
+-- ==================================================
 
--- Aplicar Mayor y menor, esto trabaja con campos que sean en numeros (decimal) trabajas con : >< - where
+-- Ordenar el nombre de los meseros de forma ascendente
+SELECT * from meseros order by nombre asc;
+
+-- Ordenar por Identificador del meseros de mayor a menor
+SELECT * from meseros order by id_mesero desc
+
+-- ==================================================
+-- CONSULTAS MULTITABLAS (USO DE JOIN)
+-- ==================================================
+
