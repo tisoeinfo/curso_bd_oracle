@@ -1,2 +1,1 @@
-# curso_bd_oracle
-Curso de Base de Datos Oracle
+Curso de Base de Datos de Oracle y SQL Server
