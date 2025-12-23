@@ -14,5 +14,5 @@
 - ALTER TABLE turnos alter column nombre_turno VARCHAR(50);
 
 # Comandos de apoyo
-- Para ver tablas: EXEC sp_help MESEROS;
-- Para ver procedimientos almacenados : EXEC sp_helptext 'SP_INSERTAR_MESEROS';
+- Para ver tablas: sp_help MESEROS;
+- Para ver procedimientos almacenados : sp_helptext 'SP_INSERTAR_MESEROS';
